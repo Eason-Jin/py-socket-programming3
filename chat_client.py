@@ -30,6 +30,7 @@ class ChatClient():
         self.port = port
 
         self.context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+        self.context.set_ciphers('AES128-SHA')
 
         # Initial prompt
         self.prompt = f'[{name}@{socket.gethostname()}]> '
